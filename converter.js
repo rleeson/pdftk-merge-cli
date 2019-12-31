@@ -1,22 +1,20 @@
-var PDFMerge = require('pdf-merge');
-let in1, in2, out;
+const PDFMerge = require('pdf-merge');
+let inFiles = [], out = '';
 
 process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-  if ( 2 === index ) {
-      in1 = val;
-  }
-  if ( 3 === index ) {
-      in2 = val;
-  }
-  if ( 4 === index ) {
-      out = val;
+  switch(index) {
+      case 0:
+      case 1:
+          break;
+      case 2: 
+        out = val;
+        break;
+      default:
+        inFiles.push(val);
   }
 });
- 
-const files = [
-    in1,
-    in2,
-];
 
-PDFMerge(files, {output: out});
+console.log(`PDF files to combine:`);
+console.log(inFiles);
+PDFMerge(inFiles, {output: out});
+console.log(`Combined file location: ${out}`);

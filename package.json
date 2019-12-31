@@ -1,7 +1,7 @@
 {
   "name": "pdfmerge",
   "version": "1.0.0",
-  "description": "Merge PDF files together using node and an installation of the PDFtk Free CLI tools",
+  "description": "Merge PDF files together using node and an installation of the PDFtk Toolkit CLI",
   "main": "converter.js",
   "dependencies": {
     "pdf-merge": "^1.0.2"
